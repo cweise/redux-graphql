@@ -25,4 +25,5 @@ CHANGELOG.md
 .cache
 webpack.config.js
 babel.config.js
-src/utils.test.js
+src/
+lib/utils.test.js
