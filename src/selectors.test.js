@@ -4,9 +4,11 @@ describe("selectors", () => {
   test("get headers", () => {
     const state = {
       graphql: {
-        tokenPath: "token"
+        tokenPath: "auth.access_token"
       },
-      token: "MY_SECRET_TOKEN"
+      auth: {
+        access_token: "MY_SECRET_TOKEN"
+      }
     };
 
     const expected = {

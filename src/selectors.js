@@ -1,3 +1,4 @@
+import get from "lodash/get";
 import { createHash } from "./utils";
 
 const defaultState = { isFetching: false, data: null };
@@ -14,7 +15,7 @@ export const getTokenPath = state => state?.graphql?.tokenPath ?? "";
 
 export const getHeaders = state => {
   const tokenPath = getTokenPath(state);
-  const token = state[tokenPath];
+  const token = get(state, tokenPath, "");
   const authHeaders = token ? { Authorization: `Bearer ${token}` } : {};
 
   return {
