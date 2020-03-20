@@ -10,9 +10,16 @@ export const getUrl = state => state?.graphql?.url ?? "";
 
 export const getUrlAliases = state => state?.graphql?.urlAliases ?? {};
 
+export const getTokenPath = state => state?.graphql?.tokenPath ?? "";
+
 export const getHeaders = state => {
+  const tokenPath = getTokenPath(state);
+  const token = state[tokenPath];
+  const authHeaders = token ? { Authorization: `Bearer ${token}` } : {};
+
   return {
     ...defaultHeaders,
-    ...(state?.graphql?.headers ?? {})
+    ...(state?.graphql?.headers ?? {}),
+    ...authHeaders
   };
 };

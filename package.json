@@ -1,6 +1,6 @@
 {
   "name": "@cweise/redux-graphql",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A redux library to save graphql data in a redux store.",
   "main": "lib/index.js",
   "scripts": {

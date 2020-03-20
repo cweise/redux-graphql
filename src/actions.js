@@ -23,10 +23,9 @@ const requestError = payload => ({
 
 export const request = (query, options) => async (dispatch, getState) => {
   const queryHash = createHash(query);
-  const url =
-    options && options.urlAlias
-      ? getUrlAliases(getState())[options.urlAlias]
-      : getUrl(getState());
+  const url = options?.urlAlias
+    ? getUrlAliases(getState())[options.urlAlias]
+    : getUrl(getState());
 
   const headers = getHeaders(getState());
 
